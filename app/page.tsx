@@ -138,7 +138,7 @@ export default function Home() {
 
               {/* HEPSİ .jpeg YAPILDI */}
               <ServiceGallery items={[
-                { type: 'video', src: '/video1.mp4' }, 
+                { type: 'video', src: '/video2.mp4' }, 
                 { type: 'image', src: '/foto1.jpeg', alt: 'Wohnung 1' },
                 { type: 'image', src: '/foto2.jpeg', alt: 'Wohnung 2' },
                 { type: 'image', src: '/foto3.jpeg', alt: 'Wohnung 3' },
@@ -197,7 +197,7 @@ export default function Home() {
               </div>
 
               <ServiceGallery items={[
-                { type: 'video', src: '/video2.mp4' },
+                { type: 'video', src: '/video1.mp4' },
                 { type: 'image', src: '/foto15.jpeg', alt: 'Umzug 1' },
                 { type: 'image', src: '/foto16.jpeg', alt: 'Umzug 2' },
                 { type: 'image', src: '/foto17.jpeg', alt: 'Umzug 3' },
