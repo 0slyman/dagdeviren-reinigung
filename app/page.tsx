@@ -3,17 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ServiceGallery from "@/components/ServiceGallery";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white">
       
       {/* 1. HERO BÖLÜMÜ (Giriş) */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Arka Plan Resmi */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.jpg" 
+            src="/hero.jpg" // DÜZELTİLDİ: .jpg -> .jpeg
             alt="Reinigungsfirma Basel"
             fill
             className="object-cover"
@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. NEDEN BİZ? (Vorteile) */}
+      {/* 2. AVANTAJLAR (Neden Biz?) */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -81,7 +81,6 @@ export default function Home() {
                 Wir verwenden modernste Reinigungstechniken und umweltfreundliche Mittel für strahlende Ergebnisse.
               </p>
             </div>
-
             {/* Kutu 2 */}
             <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
               <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -92,7 +91,6 @@ export default function Home() {
                 Pünktlichkeit und Vertrauen sind unser Fundament. Wir halten, was wir versprechen.
               </p>
             </div>
-
             {/* Kutu 3 */}
             <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group">
               <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -107,70 +105,115 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. HİZMETLER ÖZETİ (Dienstleistungen) - ARTIK LACİVERT (SLATE-900) */}
-      <section className="py-20 bg-slate-900 text-white">
+      {/* 3. HİZMETLER VE GALERİLER */}
+      <section className="py-24 bg-slate-900 text-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="text-sm font-bold text-blue-500 uppercase tracking-widest mb-2">UNSERE DIENSTLEISTUNGEN</h2>
-              <h3 className="text-4xl font-bold">Professionelle Reinigungslösungen</h3>
-            </div>
-            <Link href="/dienstleistungen/wohnungsreinigung">
-              <button className="text-white border-b border-blue-500 pb-1 hover:text-blue-500 transition">Alle Services ansehen &rarr;</button>
-            </Link>
+          <div className="mb-16 text-center md:text-left">
+            <h2 className="text-sm font-bold text-blue-500 uppercase tracking-widest mb-2">UNSERE DIENSTLEISTUNGEN</h2>
+            <h3 className="text-4xl font-bold">Professionelle Reinigungslösungen</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl">
+              Entdecken Sie unsere Arbeit. Scrollen Sie durch die Galerien, um unsere Ergebnisse zu sehen.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Hizmet Kartı 1 */}
-            <Link href="/dienstleistungen/wohnungsreinigung" className="group">
-              <div className="relative h-80 rounded-2xl overflow-hidden cursor-pointer">
-                <Image src="/hizmet-ev.jpg" alt="Wohnungsreinigung" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                  <h4 className="text-xl font-bold mb-1">Wohnungsreinigung</h4>
-                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0">Detailreinigung für Ihr Zuhause.</p>
+          <div className="flex flex-col gap-16">
+            
+            {/* --- HİZMET 1: EV TEMİZLİĞİ --- */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 hover:border-blue-500/30 transition-colors">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                <div>
+                  <h4 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+                    <span className="text-blue-500">🏠</span> Wohnungsreinigung
+                  </h4>
+                  <p className="text-gray-400 mt-2 max-w-xl">
+                    Detailreinigung für Küche, Bad, Böden und Wohnräume.
+                  </p>
                 </div>
+                <Link href="/dienstleistungen/wohnungsreinigung">
+                  <button className="px-6 py-2 rounded-full border border-white/20 hover:bg-white hover:text-slate-900 transition-all text-sm font-bold">
+                    Details ansehen
+                  </button>
+                </Link>
               </div>
-            </Link>
 
-            {/* Hizmet Kartı 2 */}
-            <Link href="/dienstleistungen/umzugsreinigung" className="group">
-              <div className="relative h-80 rounded-2xl overflow-hidden cursor-pointer">
-                <Image src="/hizmet-tasinma.jpg" alt="Umzugsreinigung" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                  <h4 className="text-xl font-bold mb-1">Umzugsreinigung</h4>
-                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0">Mit Abnahmegarantie.</p>
-                </div>
-              </div>
-            </Link>
+              {/* HEPSİ .jpeg YAPILDI */}
+              <ServiceGallery items={[
+                { type: 'video', src: '/video1.mp4' }, 
+                { type: 'image', src: '/foto1.jpeg', alt: 'Wohnung 1' },
+                { type: 'image', src: '/foto2.jpeg', alt: 'Wohnung 2' },
+                { type: 'image', src: '/foto3.jpeg', alt: 'Wohnung 3' },
+                { type: 'image', src: '/foto4.jpeg', alt: 'Wohnung 4' },
+                { type: 'image', src: '/foto5.jpeg', alt: 'Wohnung 5' },
+                { type: 'image', src: '/foto6.jpeg', alt: 'Wohnung 6' },
+                { type: 'image', src: '/foto7.jpeg', alt: 'Wohnung 7' },
+              ]} />
+            </div>
 
-             {/* Hizmet Kartı 3 */}
-             <Link href="/dienstleistungen/bueroreinigung" className="group">
-              <div className="relative h-80 rounded-2xl overflow-hidden cursor-pointer">
-                <Image src="/hizmet-ofis.jpg" alt="Büroreinigung" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                  <h4 className="text-xl font-bold mb-1">Büroreinigung</h4>
-                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0">Für ein sauberes Arbeitsumfeld.</p>
+            {/* --- HİZMET 2: OFİS TEMİZLİĞİ --- */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 hover:border-blue-500/30 transition-colors">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                <div>
+                  <h4 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+                    <span className="text-blue-500">💼</span> Büroreinigung
+                  </h4>
+                  <p className="text-gray-400 mt-2 max-w-xl">
+                    Saubere Arbeitsplätze für produktives Arbeiten. Diskret und schnell.
+                  </p>
                 </div>
+                <Link href="/dienstleistungen/bueroreinigung">
+                  <button className="px-6 py-2 rounded-full border border-white/20 hover:bg-white hover:text-slate-900 transition-all text-sm font-bold">
+                    Details ansehen
+                  </button>
+                </Link>
               </div>
-            </Link>
 
-            {/* Hizmet Kartı 4 */}
-            <Link href="/dienstleistungen/fensterreinigung" className="group">
-              <div className="relative h-80 rounded-2xl overflow-hidden cursor-pointer">
-                <Image src="/hizmet-cam.jpg" alt="Fensterreinigung" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                  <h4 className="text-xl font-bold mb-1">Fensterreinigung</h4>
-                  <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0">Streifenfreier Glanz.</p>
+              <ServiceGallery items={[
+                { type: 'image', src: '/foto8.jpeg', alt: 'Büro 1' },
+                { type: 'image', src: '/foto9.jpeg', alt: 'Büro 2' },
+                { type: 'image', src: '/foto10.jpeg', alt: 'Büro 3' },
+                { type: 'image', src: '/foto11.jpeg', alt: 'Büro 4' },
+                { type: 'image', src: '/foto12.jpeg', alt: 'Büro 5' },
+                { type: 'image', src: '/foto13.jpeg', alt: 'Büro 6' },
+                { type: 'image', src: '/foto14.jpeg', alt: 'Büro 7' },
+              ]} />
+            </div>
+
+            {/* --- HİZMET 3: TAŞINMA & CAM --- */}
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 hover:border-blue-500/30 transition-colors">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                <div>
+                  <h4 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+                    <span className="text-blue-500">✨</span> Umzugs & Fenster
+                  </h4>
+                  <p className="text-gray-400 mt-2 max-w-xl">
+                    Stressfreier Umzug mit Abnahmegarantie und streifenfreie Fenster.
+                  </p>
                 </div>
+                <Link href="/dienstleistungen/umzugsreinigung">
+                  <button className="px-6 py-2 rounded-full border border-white/20 hover:bg-white hover:text-slate-900 transition-all text-sm font-bold">
+                    Details ansehen
+                  </button>
+                </Link>
               </div>
-            </Link>
+
+              <ServiceGallery items={[
+                { type: 'video', src: '/video2.mp4' },
+                { type: 'image', src: '/foto15.jpeg', alt: 'Umzug 1' },
+                { type: 'image', src: '/foto16.jpeg', alt: 'Umzug 2' },
+                { type: 'image', src: '/foto17.jpeg', alt: 'Umzug 3' },
+                { type: 'image', src: '/foto18.jpeg', alt: 'Umzug 4' },
+                { type: 'image', src: '/foto19.jpeg', alt: 'Umzug 5' },
+                { type: 'image', src: '/foto20.jpeg', alt: 'Fenster 1' },
+                { type: 'image', src: '/foto21.jpeg', alt: 'Fenster 2' },
+              ]} />
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 4. CTA BÖLÜMÜ (Çağrı) - ARTIK LACİVERT VE ÜSTLE BİRLEŞTİ */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        {/* Dekoratif Işık Efektleri (Mavi Parlama) */}
+      {/* 4. CTA (Alt Çağrı) */}
+      <section className="py-24 bg-slate-900 text-white relative overflow-hidden border-t border-white/10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3"></div>
 
