@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     shortcut: '/icon.png',  
     apple: '/icon.png',     
   },
+  
+  verification: {
+    google: '<meta name="google-site-verification" content="W4e7QMJV3lrTMjCbPmcYz7evegtLGJx-LzHKmO17LWM" />', 
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +32,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics /> 
       </body>
     </html>
   );
