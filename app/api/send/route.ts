@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       from: '"Dagdeviren Web" <dagdevirenreinigung25@gmail.com>',
       to: 'dagdevirenreinigung25@gmail.com', 
       replyTo: email, 
-      // Konu Başlığı Almanca: "Yeni Teklif İsteği" yerine
+      // Konu Başlığı Almanca: "Yeni Teklif İsteği" 
       subject: `Neue Offertenanfrage: ${ad} ${soyad} - ${hizmet}`, 
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">

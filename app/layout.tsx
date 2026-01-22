@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dagdeviren Reinigung - Basel",
-  // DÜZELTME BURADA: Türkçe açıklama Almanca yapıldı
   description: "Professionelle Wohnungs- und Büroreinigung in Basel. Zuverlässig, gründlich und sauber. Jetzt Offerte anfordern.",
   icons: {
     icon: '/icon.png',      

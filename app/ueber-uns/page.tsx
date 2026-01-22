@@ -134,7 +134,7 @@ export default function AboutPage() {
             Lassen Sie uns gemeinsam herausfinden, wie wir Ihnen helfen können. Wir freuen uns auf Ihre Nachricht.
           </p>
           <Link href="/kontakt">
-            {/* BUTON: Koyu zemin üzerinde dikkat çekmesi için Mavi (veya Beyaz) kalması daha iyidir ama isteğine göre Lacivert yaparsak kaybolur. O yüzden burada kontrast renk (Mavi) bıraktım veya Beyaz yapabiliriz. Şimdilik Mavi: */}
+            {/* BUTON:  Şimdilik Mavi: */}
             <button className="bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-blue-700 hover:scale-105 transition-all w-full md:w-auto">
               Jetzt Offerte Anfordern
             </button>

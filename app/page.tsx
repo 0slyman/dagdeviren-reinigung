@@ -13,7 +13,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.jpg" // DÜZELTİLDİ: .jpg -> .jpeg
+            src="/hero.jpg" 
             alt="Reinigungsfirma Basel"
             fill
             className="object-cover"
@@ -136,7 +136,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* HEPSİ .jpeg YAPILDI */}
+              
               <ServiceGallery items={[
                 { type: 'video', src: '/video2.mp4' }, 
                 { type: 'image', src: '/foto1.jpeg', alt: 'Wohnung 1' },
